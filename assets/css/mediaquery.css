@@ -1,0 +1,115 @@
+/* // X-Small devices (portrait phones, less than 576px)
+// No media query for `xs` since this is the default in Bootstrap
+
+// Small devices (landscape phones, 576px and up)
+@media (min-width: 576px) { ... }
+
+// Medium devices (tablets, 768px and up)
+@media (min-width: 768px) { ... }
+
+// Large devices (desktops, 992px and up)
+@media (min-width: 992px) { ... }
+
+// X-Large devices (large desktops, 1200px and up)
+@media (min-width: 1200px) { ... }
+
+// XX-Large devices (larger desktops, 1400px and up)
+@media (min-width: 1400px) { ... } */
+
+@media (max-width: 1200px) {
+    .list-items {
+        padding: 0 !important;
+    }
+    .items{
+        /* margin: .1rem !important; */
+        padding: 0  .5rem !important;
+    }
+    .items a{
+        font-size: .8rem !important;
+    }
+    
+    .active{
+        margin-top: 1rem !important;
+    }
+    .active a{
+        font-size: .7rem !important;
+  
+    }
+}
+
+
+@media (max-width: 992px) { 
+    .header-page{
+        width: 100% !important;
+        padding: 0 !important;
+        margin: 0 !important;
+    }
+    .wrapper-header{
+        width: 100% !important;
+        justify-content: flex-end !important;
+    }
+    .logo-bar{
+        padding: 0;
+    }
+    .list-items{
+        padding: 0 !important;
+        width: 80% !important;
+    }
+    .items{
+padding: .2rem 1rem!important;
+    }
+    .items a{
+        font-size: .7rem !important;
+
+    }
+    .page-navbar{
+        width: 100% !important;
+    }
+   
+    .page-logo{
+        width: 3rem !important;
+        height: 3rem !important;
+        margin-top:  .5rem !important;
+    }
+    .logo-title{
+        display: none;
+    }
+    .active{
+        border: 1px solid white !important;
+    }
+    .content{
+        margin: 0 1rem !important;
+    }
+ }
+
+@media (max-width: 768px) {
+    .list-items{display: none;}
+    .toggle-menu{
+    display: block !important;
+    margin : 1rem;
+    font-size: 1rem;
+    /* display: none !important; */
+    border: none !important;
+    cursor: pointer;
+    }
+    .content-box{
+        display: flex;
+        justify-content: center;
+    }
+    .main-content{
+        width:90% !important;
+    }
+    .row-content{
+        width: 80% !important;
+        flex-direction: column !important;
+    }
+  
+    .content {
+
+        margin: .5rem 0 !important;
+        /* width: 100%; */
+        box-shadow: rgba(6, 24, 44, 0.4) 0px 0px 0px 2px, rgba(6, 24, 44, 0.65) 0px 4px 6px -1px, rgba(255, 255, 255, 0.08) 0px 1px 0px inset;
+    } 
+ }
+
+ 
