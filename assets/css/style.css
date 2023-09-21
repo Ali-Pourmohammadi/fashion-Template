@@ -10,6 +10,10 @@ body{
     font-family: 'Sans';
     src: url('/assets/fonts/Sans a4fran3.woff') format('woff2');
   }
+  @font-face {
+    font-family: "Vazir";
+    src: url(../fonts/Vazirmatn-Medium.woff2) format("woff2");
+  }
 .header-page{
     margin:  0 auto;
     width: 90%;
@@ -28,7 +32,7 @@ body{
 }
  .items{
     display: inline-block;  
-    padding: .5rem 2rem ;
+    padding: .5rem 1.5rem ;
     margin-top: .5rem;
     cursor: pointer;
     transition: all , .5s;
@@ -61,6 +65,8 @@ body{
     display: none;
 }
 
+
+
 .logo-bar{
     display: flex;
     margin-top: .5rem;
@@ -72,63 +78,269 @@ body{
     
 }
 
-.content-box{
-    margin-top: 3rem;
-}
 
-
-.row-content{
+.banner-title{
+    padding: 10rem;
     display: flex;
-    width: 100% !important;
-    justify-content: center;
-}
-.content{
-    box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
-    text-align: center;
-    cursor: pointer;
-    transition: all .3s;
-    padding: .5rem;
-    border-radius: .2rem;
-    transition: all , .3s;
-}
-.content:hover{
-    transform: scale(1.1,1.1);
-
-}
-.content .service-block{
-    padding: 1rem;
+    flex-direction: column;
+    align-items: center;
 }
 
-.main-box{
-    margin: 0 2rem;
+.banner-header-title{
+font-weight: bold;
+font-family: "Vazir";
 }
-.header-box-content{
-    font-family: "Sans";
+
+.banner-desc{
+margin: 8rem 0;
+font-family: "Vazir";
+font-size: 1.2rem;
+font-weight: 100;
+color: #525252;
+}
+.header-banner{
+    background-color: #e7e8ea;
+display: flex;
+justify-content: center;
+}
+
+ .img-banner{
+    width: 100%;
+ }
+ .banner-btn{
+    padding: 1.5rem 4rem;
+    background-color: transparent;
+    border: none;
+    border: .2rem solid white;
+    transition: all ,.3s;
+    
+ }
+ .banner-btn a{
+    text-decoration: none;
     font-size: 1.5rem;
+    color: #111;
+    font-family: "Vazir";
+ }
+  .banner-btn:hover{
     color: #fff;
-}
-.icon-content{
-    padding: .7rem 1rem;
-    font-size: 2rem;
-    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
-    border-radius: 50%;
-    color: #fff;
-}
-.theme-one{
     background-color: blue;
-
+    /* border: none; */
+ }
+ .banner-btn:hover.banner-btn a{
+    color: #fff;
+ } 
+ .main-page{
+    width: 90%;
+margin: 0 auto;
+ }
+ .main-container{
+    margin: 2rem 0;
+    width: 100% !important;
+ }
+ .rewards{
+    background-color: #e7e8ea;
+    margin-top: 5rem;
+    width: 100% !important;
+ }
+ .rewards-icon{
+    font-size: 2rem;
+ }
+.rewards-title{
+    margin: 1rem 0;
+    font-family: "Vazir";
+    font-weight: 500;
+}
+.rewards-desc{
+    font-family: "Sans";
+    font-weight: 100;
+}
+.rewards-card{
+border: none !important;
+cursor: pointer !important;
 }
 
-.theme-two{
-    background-color: green;
+  .card-product{
+    cursor: pointer;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+  }
+  .product-grid{
+    font-family: 'Poppins', sans-serif;
+    text-align: center;
 }
-.theme-three{
-    background-color: #df44df;
+.product-grid .product-image{
+    overflow: hidden;
+    position: relative;
+    z-index: 1;
+}
+.product-grid .product-image a.image{display: block; }
+.product-grid .product-image img{
+    width: 100%;
+    height: auto;
+}
+.product-grid .product-discount-label{
+    color: #fff;
+    background: #A5BA8D;
+    font-size: 13px;
+    font-weight: 600;
+    line-height: 25px;
+    padding: 0 20px;
+    position: absolute;
+    top: 10px;
+    left: 0;
 }
 
-.theme-four{
-    background-color: gold;
+
+.product-grid .product-content{
+    background: #fff;
+    padding: 15px;
 }
-.theme-five{
-    background-color: red;
+.product-grid .title{
+    font-family: "Vazir";
+    font-weight: 500;
+    text-transform: capitalize;
+    margin: 0 0 7px;
 }
+
+.product-grid .price{
+    margin: 2rem 0;
+}
+.product-grid .price span{
+    color: #888;
+    font-size: 1.2rem;
+    font-weight: 400;
+}
+
+
+/* add btn */
+.animated-button {
+    position: relative;
+    display: inline-block;
+    padding: 1rem 3rem;
+    font-size: 1rem;
+    text-transform: uppercase;
+    color: #fff;
+    text-align: center;
+    text-decoration: none;
+    font-family: "Vazir";
+    background-color: #1f347b;
+    /* border-radius: 40px; */
+    overflow: hidden;
+    border: none;
+    z-index: 1;
+  }
+  
+  .animated-button:before {
+    transition: 1s;
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    background-color: #fff;
+    border-radius: 50%;
+    opacity: 0;
+    transform: translate(-50%, -50%);
+    z-index: -1;
+  }
+  
+  .animated-button:hover:before {
+    width: 300px;
+    height: 300px;
+    opacity: 0.4;
+    transition: all 0.5s ease-out;
+  }
+  
+  .animated-button:hover {
+    background-color: #fff;
+    color: #202960;
+    transition: all 0.5s ease-out;
+  }
+  
+  .animated-button:hover:after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    background-color: #255ea4;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    z-index: -2;
+    animation: pulse 2s infinite;
+  }
+  
+  @keyframes pulse {
+    0% {
+      width: 0;
+      height: 0;
+      opacity: 0.5;
+    }
+  
+    100% {
+      width: 200px;
+      height: 200px;
+      opacity: 0;
+    }
+  
+  }
+  .slider-container{
+    margin: 2rem 0;
+  }
+  .swiper {
+    width: 100% !important;
+    height: 50rem;
+  }
+
+  .slider-one{
+    background-image: url("/assets/images/1.jpg");
+  }
+  .slider-two{
+    background-image: url("/assets/images/2.jpg");
+  }
+  .slider-three{
+    background-image: url("/assets/images/3.jpg");
+  }
+  .slider-four{
+    background-image: url("/assets/images/4.jpg");
+  }
+  .slider-five{
+    background-image: url("/assets/images/5.jpg");
+  }
+  .slider{
+    text-align: center;
+    background-position:center;
+    background-repeat: no-repeat;
+    background-size:cover;
+    position: relative;
+  }
+  .slider-title{
+    margin-top:15rem;
+    padding: 3rem 0;
+    color: #fff;
+    z-index: 1000 !important;
+  }
+
+  .slider-title h1{
+    margin-bottom: 5rem;
+    font-size: 3¬rem !important;
+    font-weight: 300;
+    font-family: "Vazir";
+  }
+  .slider-title{
+    margin-bottom: 5rem;
+    font-size: 1.5rem !important;
+    font-weight: 300;
+    font-family: "Vazir";
+  }
+  .slider::after{
+    width: 100%;
+    height: 100%;
+    content: "";
+    background-color: rgba(100, 100, 100, .6); /* Set the gray color with opacity */
+    z-index: -1000 ;
+    position: absolute;
+    top:0;
+    right: 0;
+  }
