@@ -64,6 +64,22 @@
     .banner-row{
         width: 80% !important;
     }
+    .text-container h2{
+        font-size: 1.5rem !important;
+    }
+    .address-bar{
+        flex-direction: column;
+    }
+    .text-container{
+        width: 100% !important;
+        text-align: center;
+    }
+    .logo-container-footer{
+        margin: 1rem 0 !important;
+    }
+    .text-container p {
+        font-size: 1rem;
+    }
 }
 
 
@@ -126,6 +142,20 @@ padding: .2rem .5rem!important;
     .rewards-card{
         width: 100% !important;
     }
+    .addres-req-row h1{
+        font-size: 1.5rem !important;
+    }
+    .form-address{
+        flex-direction: column-reverse;
+        align-items:center;
+    }
+    #email-input{
+        width: 100% !important;
+        margin: 1rem 0 !important;
+    }
+    .form-address .email-btn{
+        width: 45% !important;
+    }
  }
 
 @media (max-width: 768px) {
@@ -175,6 +205,17 @@ padding: .2rem .5rem!important;
     } 
     .swiper{
         height: 30rem !important;
+    }
+    .addres-req-row h1{
+        font-size: 1.5rem !important;
+    }
+    #email-input{
+        width: 100% !important;
+        text-align: center;
+        margin: 1rem 0 !important;
+    }
+    .form-address .email-btn{
+        width: 100% !important;
     }
  }
 
