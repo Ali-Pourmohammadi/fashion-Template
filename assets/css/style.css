@@ -4,7 +4,7 @@
     margin: 0;
 }
 body{
-    background-color: #f9faff;
+  transition: all , .3s;
 }
 @font-face {
     font-family: 'Sans';
@@ -16,7 +16,7 @@ body{
   }
 .header-page{
     margin:  0 auto;
-    width: 90%;
+    width: 100%;
     margin-top: 1rem;
 }
 .wrapper-header{
@@ -24,7 +24,7 @@ body{
     display: flex;
     justify-content: space-between;
     box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
-
+    padding: 1rem;
 }
 .list-items{
     list-style-type: none;
@@ -52,30 +52,167 @@ body{
     transition: all .3s;
     color: #111;
 }
-.active{
+.active-btn{
     background-color: blue;
     padding: .5rem 2rem;
         border-radius: .2rem;
 }
-.active a{
+.active-btn a{
     color: #fff !important;
 
 }
 .toggle-menu{
     display: none;
 }
+#checkbox {
+  display: none;
+}
 
+.toggle {
+  position: relative;
+  width: 40px;
+  cursor: pointer;
+  margin: auto;
+  display: block;
+  height: calc(4px * 3 + 11px * 2);
+}
 
+.bar {
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 4px;
+  border-radius: calc(4px / 2);
+  background: #7b52b9;
+  color: inherit;
+  opacity: 1;
+  transition: none 0.35s cubic-bezier(.5,-0.35,.35,1.5) 0s;
+}
 
+/***** Tornado Animation *****/
+
+.bar--top {
+  bottom: calc(50% + 11px + 4px/ 2);
+  transition-property: bottom,transform;
+  transition-delay: calc(0s + 0.35s) * .6;
+}
+
+.bar--middle {
+  top: calc(50% - 4px/ 2);
+  transition-property: opacity,transform;
+  transition-delay: calc(0s + 0.35s * .3);
+}
+
+.bar--bottom {
+  top: calc(50% + 11px + 4px/ 2);
+  transition-property: top,transform;
+  transition-delay: 0s;
+}
+
+#checkbox:checked + .toggle .bar--top {
+  transform: rotate(-135deg);
+  transition-delay: 0s;
+  bottom: calc(50% - 4px/ 2);
+}
+
+#checkbox:checked + .toggle .bar--middle {
+  opacity: 0;
+  transform: rotate(-135deg);
+  transition-delay: calc(0s + 0.35s * .3);
+}
+
+#checkbox:checked + .toggle .bar--bottom {
+  top: calc(50% - 4px/ 2);
+  transform: rotate(-225deg);
+  transition-delay: calc(0s + 0.35s * .6);
+}
+
+.list-show{
+  display: block !important;
+}
 .logo-bar{
     display: flex;
-    margin-top: .5rem;
+    /* margin-top: 1rem; */
 }
+
 .page-logo{
-    width: 5rem;
-    height: 4rem;
+    width: 6rem;
+    height: 5rem;
+    padding: 1rem;
     margin-left:1rem;
     
+}
+/* The switch - the box around the slider */
+#theme-toggle-button {
+  font-size: 1rem;
+  display: inline-block;
+  width: 4rem;
+/* margin-bottom: 1rem; */
+margin-left: 2rem;
+  cursor: pointer;
+}
+
+/* Hide default HTML checkbox */
+#toggle {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+#container,
+#patches,
+#stars,
+#button,
+#sun,
+#moon,
+#cloud {
+  transition-property: all;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 0.25s;
+}
+
+/* night sky background */
+#toggle:checked + svg #container {
+  fill: #2b4360;
+}
+
+/* move button to right when checked */
+#toggle:checked + svg #button {
+  transform: translate(28px, 2.333px);
+}
+
+/* show/hide sun and moon based on checkbox state */
+#sun {
+  opacity: 1;
+}
+
+#toggle:checked + svg #sun {
+  opacity: 0;
+}
+
+#moon {
+  opacity: 0;
+}
+
+#toggle:checked + svg #moon {
+  opacity: 1;
+}
+
+/* show or hide background items on checkbox state */
+#cloud {
+  opacity: 1;
+}
+
+#toggle:checked + svg #cloud {
+  opacity: 0;
+}
+
+#stars {
+  opacity: 0;
+}
+
+#toggle:checked + svg #stars {
+  opacity: 1;
 }
 
 
@@ -159,9 +296,11 @@ border: none !important;
 cursor: pointer !important;
 }
 
+.content-container{
+}
+
   .card-product{
     cursor: pointer;
-    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
   }
   .product-grid{
     font-family: 'Poppins', sans-serif;
@@ -495,6 +634,7 @@ border: .2rem solid hsl(230, 100%, 99%);
   align-items: center;
   width: 100% !important;
   padding: 1rem;
+
   /* background-color: rgba(100, 100, 100, .3); Set the gray color with opacity */
 color: #e7e8ea;
   position: relative;
@@ -544,4 +684,91 @@ color: #e7e8ea;
   font-size: 1.5rem;
   font-weight: 500;
   font-family: "Vazir";
+}
+.tab-container{
+display: flex;
+flex-direction: column;
+justify-content: space-around;
+align-items: center;
+position: relative;
+
+}
+
+
+
+.category-title{
+  font-size: 1.5rem;
+  margin: 1rem 0;
+  font-weight: 500;
+  font-family: "Vazir";
+}
+.tabs{
+  width: 90%;
+  display: flex;
+  justify-content: space-around;
+}
+  .tab-line{
+    width: 75%;
+    height: 1px;
+    margin: 2rem 0;
+    background-color: rgba(0, 0, 0, 0.3);
+  }
+
+/* tab btn style */
+.tab-button {
+  background-color: transparent;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  position: relative;
+  font-family: "Sans";
+  transition: border-bottom 0.3s ease;
+}
+
+.tab-button::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 2px; /* Border thickness */
+  bottom: 0;
+  right:  0;
+  background-color: #111; /* Border color */
+  transform: scaleX(0); /* Initially, the border is hidden */
+  transform-origin: left;
+  transition: transform 0.3s ease;
+}
+
+.tab-button:hover::before {
+  transform: scaleX(1); /* Expand the border on hover */
+  transform-origin: right;
+}
+.active-tab{
+  box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
+}
+.content{
+  display: none;
+}
+.content.active{
+  display: block !important;
+}
+.background-dark{
+  background-color: #040424;
+}
+.color-light{
+  color:  #fff  !important;
+}
+.background-light{
+  background-color: #f9faff !important;
+}
+.color-dark{
+  color: #111;
+}
+/* Login Page */
+.nav-bar-fixed{
+  position: fixed;
+  top: 0;
+  background-color: #fff;
+  transition: all , .3s;
+  margin: 0;
+  z-index: 100000;
 }
